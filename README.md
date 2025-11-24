@@ -8,26 +8,11 @@ FEATURES
 •	Data Preprocessing Utilities: Handle missing values, scaling, and feature selection.
 •	Fast Similarity Search: Cosine similarity or nearest-neighbor models.
 •	Interactive Recommendation Function: Input a song or user ID to retrieve top suggestions.
-music-recommender/
-│
-├── data/
-│   ├── songs.csv
-│   ├── audio_features.csv
-│   └── user_interactions.csv   # optional
-│
-├── src/
-│   ├── preprocessing.py
-│   ├── model_content.py
-│   ├── model_collab.py
-│   ├── recommender.py
-│   └── utilities.py
-│
-├── notebooks/
-│   └── EDA.ipynb
-│
-├── app.py
-├── requirements.txt
-└── README.md
+Future Enhancements
+	•	Add Spotify Web API for live audio extraction
+	•	Train deep learning models (Autoencoders, NCF)
+	•	Add mood-based playlist generation
+	•	Deploy as full web app with React frontend
 
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
