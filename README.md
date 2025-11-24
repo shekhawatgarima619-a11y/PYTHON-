@@ -28,6 +28,7 @@ music-recommender/
 ├── app.py
 ├── requirements.txt
 └── README.md
+
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
@@ -40,8 +41,6 @@ def scale_features(df, feature_cols):
     scaler = StandardScaler()
     scaled = scaler.fit_transform(df[feature_cols])
     return scaled, scaler
-    class HybridRecommender:
-class HybridRecommender:
 
     def __init__(self, content_model, collab_model=None):
         self.c = content_model
