@@ -8,3 +8,49 @@ FEATURES
 •	Data Preprocessing Utilities: Handle missing values, scaling, and feature selection.
 •	Fast Similarity Search: Cosine similarity or nearest-neighbor models.
 •	Interactive Recommendation Function: Input a song or user ID to retrieve top suggestions.
+music-recommender/
+│
+├── data/
+│   ├── songs.csv
+│   ├── audio_features.csv
+│   └── user_interactions.csv   # optional
+│
+├── src/
+│   ├── preprocessing.py
+│   ├── model_content.py
+│   ├── model_collab.py
+│   ├── recommender.py
+│   └── utilities.py
+│
+├── notebooks/
+│   └── EDA.ipynb
+│
+├── app.py
+├── requirements.txt
+└── README.md
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+def load_data(song_path, feature_path):
+    songs = pd.read_csv(song_path)
+    features = pd.read_csv(feature_path)
+    return songs, features
+
+def scale_features(df, feature_cols):
+    scaler = StandardScaler()
+    scaled = scaler.fit_transform(df[feature_cols])
+    return scaled, scaler
+    class HybridRecommender:
+class HybridRecommender:
+
+    def __init__(self, content_model, collab_model=None):
+        self.c = content_model
+        self.k = collab_model
+
+    def recommend_song(self, song, n=10):
+        return self.c.recommend(song, n)
+
+    def recommend_user(self, user_id, n=10):
+        if not self.k:
+            raise ValueError("Collaborative model not initialized.")
+        return self.k.recommend_for_user(user_id, n)
